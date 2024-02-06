@@ -1,0 +1,49 @@
+:root{
+    --primary_color : rgba(255, 102, 0, 0.804);
+    --second_color : blue;
+}
+
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    overflow-x: hidden;
+}
+
+.parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap : 50px;
+    margin: 120px auto;
+    overflow-y: hidden;
+
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 70vw;
+    height: 40vh;
+    transition: all 0.8s ease;
+    opacity: 0;
+}
+
+.item:nth-of-type(2n){
+    background-color: var(--primary_color);
+    transform: translateY(10%);
+}
+.item:nth-child(2n + 1){
+    background-color: var(--second_color);
+    transform: translateY(10%);
+}
+
+.item.show{
+    transform: translate(0);
+    opacity: 1;
+}
